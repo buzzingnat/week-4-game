@@ -1,0 +1,220 @@
+/* box sizing fix */
+* {
+	box-sizing: border-box;
+}
+
+/* Header fonts */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Georgia', 'serif';
+	font-weight: 800;
+}
+
+h1 {
+	font-size: 38px;
+}
+h2 {
+	font-size: 32px;
+}
+h3 {
+	font-size: 30px;
+}
+
+body {
+	/* water repeat */
+	background: url("../images/onePiece/pageBGRepeat.jpg");
+	min-height: 100vh;
+	min-width: 90vw;
+	background-size: auto 100%;
+	background-position: center bottom;
+	/* main text fonts */
+	font-family: 'Arial', 'sans-serif';
+}
+
+.contentContainer {
+	/* styling to make the image work */
+	position: relative;
+	background: url("../images/onePiece/pageBackground.jpg");
+	min-height: 100vh;
+	max-width: 700px;
+	min-width: 90%;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	/* position the element on the page */
+	margin: 0 auto;
+}
+
+/* style to START */
+
+.startPos {
+	position: absolute;
+}
+
+.warriorContainer {
+	display: inline-block;
+}
+
+.warriorTitle, .battleContainer .title {
+	height: 3.2em;
+	width: auto;
+	border: thin solid #333;
+	line-height: 3em;
+	background: #aaa;
+	opacity: .8;
+	overflow: hidden;
+	border-radius: 5px;
+}
+
+.name, .health {
+	margin: 0;
+	display: inline-block;
+}
+
+.name {
+	position: relative;
+	padding: 3px .3em;
+}
+
+.health {
+	position: relative;
+	float: right;
+	padding: 3px .3em;
+	background: #222;
+	color: #eee;
+	border-left: #333 solid thin;
+}
+
+.imgContainer {
+	/* position the elements */
+	position: relative;
+	/* make a circle with a thin border */
+	border-radius: 40px;
+	height: 200px;
+	width: 200px;
+	overflow: hidden;
+	border: thin solid #777;
+}
+
+.startPos.warriorPos1 {
+	/* position luffy starting place */
+	top: 1%;
+	left: 15%;
+}
+
+.startPos.warriorPos2 {
+	/* position sanji starting place */
+	top: 60%;
+	left: 70%;
+}
+
+.startPos.warriorPos3 {
+	/* position robin starting place */
+	top: 50%;
+	left: 11%;
+}
+
+.startPos.warriorPos4 {
+	/* position zoro starting place */
+	top: 0%;
+	left: 60%;
+}
+
+img.warrior {
+	position: relative;
+	left: -50%;
+}
+
+canvas.warrior {
+	position: relative;
+	left: -50%;
+	height: auto;
+	width: auto;
+	background: green;
+	opacity: 0;
+}
+
+/* Style for BATTLE */
+
+.hero {
+	position: absolute;
+	transform: translate(0px, 50%);
+}
+
+.monster {
+	position: relative;
+	float: right;
+	display: block;
+	clear: both;
+}
+
+.monster.firstMonster {
+	margin-top: 50px;
+}
+
+
+.monster .title {
+	width: 300px;
+	padding: .1em .2em;
+	line-height: 1.5em;
+	height: 1.5em;
+}
+
+.monster .imgContainer {
+	width: 300px;
+	height: 300px;
+}
+
+.warriorContainer {
+    margin: 5px 0;
+}
+
+.warriorTitle {
+	line-height: 1.2em;
+	height: 30px;
+	text-align: center;
+	width: 200px;
+}
+.hero .name, .hero .health {
+	padding: 5px .3em;
+	padding-bottom: 4em;
+}
+.monster .name {
+	padding: .25em 1em 5em 1em;
+	font-size: 1.2em;
+}
+.monster .health {
+	padding: .25em 1em 5em 1em;
+	font-size: 1.1em;
+}
+
+.monster .warriorTitle {
+    width: 120px;
+}
+
+.monster .name, .monster .health {
+    padding: .2em .25em;
+    padding-bottom: 4em;
+}
+
+.monster .imgContainer {
+    height: 120px;
+    width: 120px;
+}
+
+.monster img {
+	height: 120px;
+}
+
+.monster.defend .warriorTitle, .monster.defend .imgContainer {
+    width: 200px;
+}
+.monster.defend .imgContainer, .monster.defend .imgContainer img {
+    height: 200px;
+}
+
+/* HOVER AND CLICK EFFECTS */
+.monster:hover .imgContainer {
+	border: solid 2px red;
+}
+
+/* show and hide the correct items on page load */
