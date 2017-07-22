@@ -54,34 +54,52 @@ body {
 	display: inline-block;
 }
 
-.warriorTitle, .battleContainer .title {
-	height: 3.2em;
+.warriorTitle {
+	height: auto;
 	width: auto;
 	border: thin solid #333;
-	line-height: 3em;
 	background: #aaa;
 	opacity: .8;
 	overflow: hidden;
 	border-radius: 5px;
 }
 
-.name, .health {
-	margin: 0;
-	display: inline-block;
-}
+/* notes for adding more stats to warriors */
 
 .name {
-	position: relative;
+    display: block;
+    width: 100%;
+    padding: .1em 2em;
+    text-align: center;
+    font-size: 22px;
+    line-height: 26px;
+    position: relative;
 	padding: 3px .3em;
 }
 
-.health {
-	position: relative;
-	float: right;
-	padding: 3px .3em;
-	background: #222;
+h3 {
+    display: inline-block;
+    width: 33.33%;
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 3px .3em;
+    background: #222;
 	color: #eee;
 	border-left: #333 solid thin;
+}
+
+.monster .name {
+    font-size: 18px;
+    line-height: 22px;
+    padding: 2px 0;
+}
+
+.monster h3 {
+    font-size: 15px;
+    padding: 2px 0;
+    line-height: 19px;
+    width: 50%;
 }
 
 .imgContainer {
@@ -116,7 +134,7 @@ body {
 .startPos.warriorPos4 {
 	/* position zoro starting place */
 	top: 0%;
-	left: 60%;
+	left: 67%;
 }
 
 img.warrior {
@@ -148,68 +166,109 @@ canvas.warrior {
 }
 
 .monster.firstMonster {
-	margin-top: 50px;
+	margin-top: 20px;
 }
 
 
 .monster .title {
-	width: 300px;
+	width: 120px;
 	padding: .1em .2em;
 	line-height: 1.5em;
 	height: 1.5em;
 }
-
-.monster .imgContainer {
-	width: 300px;
-	height: 300px;
+.monster {
+	transform:scale(.75,.75);
 }
 
-.warriorContainer {
-    margin: 5px 0;
+.monster.warriorContainer {
+    margin: -25px 0;
 }
 
-.warriorTitle {
-	line-height: 1.2em;
-	height: 30px;
-	text-align: center;
-	width: 200px;
+.defeated {
+	opacity: .5;
+	cursor: not-allowed;
 }
-.hero .name, .hero .health {
-	padding: 5px .3em;
-	padding-bottom: 4em;
-}
-.monster .name {
-	padding: .25em 1em 5em 1em;
-	font-size: 1.2em;
-}
-.monster .health {
-	padding: .25em 1em 5em 1em;
-	font-size: 1.1em;
+.monster.defend {
+	transform:scale(1,1);
+	margin: 0;
 }
 
-.monster .warriorTitle {
-    width: 120px;
+.vsContainer {
+	width: 450px;
+    top: 50px;
+    margin: 0 auto;
+    position: relative;
 }
 
-.monster .name, .monster .health {
-    padding: .2em .25em;
-    padding-bottom: 4em;
+.vsContainer .imgContainer {
+	height: 350px;
+    width: 450px;
 }
 
-.monster .imgContainer {
-    height: 120px;
-    width: 120px;
+.vsImg {
+    left: -20%;
+    height: 100%;
+    position: relative;
 }
 
-.monster img {
-	height: 120px;
+.vsTitle {
+    transform: rotate(30deg);
+    font-size: 3em;
+    color: red;
+    text-shadow: black 3px 3px;
 }
 
-.monster.defend .warriorTitle, .monster.defend .imgContainer {
+.vsTitleContainer {
+    position: relative;
+    width: 500px;
+    text-align: center;
+    top: 200px;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+/* shrink vs image box */
+.vsContainerSmall .imgContainer {
+    height: 160px;
     width: 200px;
 }
-.monster.defend .imgContainer, .monster.defend .imgContainer img {
-    height: 200px;
+
+.vsContainerSmall .vsTitleContainer {
+    width: 200px;
+    top: 120px;
+}
+
+.vsContainerSmall .vsTitle {
+    font-size: 2em;
+    text-shadow: black 2px 2px;
+}
+
+.vsContainerSmall {
+	margin: 0 auto;
+    width: 200px;
+    top: 0;
+    text-align: center;
+}
+
+/* style battle button */
+.battleBtn {
+	margin: 0 auto;
+	margin-top: 30px;
+	padding: 30px;
+	border-radius: 10px;
+	border: #a00 solid thin;
+	border-bottom: #f88 solid thin;
+	border-right: #f88 solid thin;
+	background-color: #e55;
+}
+.battleBtn:hover, .battleBtn:focus {
+	background-color: #e33;
+	border: #f00 solid thin;
+	border-top: #f88 solid thin;
+	border-left: #f88 solid thin;
+}
+.battleBtn:active {
+	background-color: #e88;
 }
 
 /* HOVER AND CLICK EFFECTS */
@@ -217,4 +276,46 @@ canvas.warrior {
 	border: solid 2px red;
 }
 
-/* show and hide the correct items on page load */
+/* GAME INFO STYLING - gets the job done, I guess */
+.gameInfo {
+	position: relative;
+	width: 15em;
+	margin: 0 auto;
+	background: #222;
+	border: #999 solid 2px;
+	color: #fff;
+	opacity: .8;
+	padding: 1em;
+	border-radius: 7px;
+	top: 1em;
+}
+.gameInfo h1{
+	font-size: 24px;
+}
+.gameInfo p {
+	padding: .5em 0;
+}
+
+/* WIN SCREEN STYLING */
+.win, .lose {
+	text-align: center;
+	width: 80%;
+	font-size: 36px;
+	height: 400px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.win h1, .lose h1 {
+	margin: 0 auto;
+	margin-top: 200px;
+	font-size: 40px;
+}
+.win {
+	background: #0d4;
+	border: solid #0a2 3px;
+}
+.lose {
+	background: #d22;
+	border: solid #a11 3px;
+}
+/* LOSE SCREEN STYLING */
