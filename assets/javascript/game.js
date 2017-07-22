@@ -345,7 +345,6 @@ var fightingRPG = (function() {
             public.warriors[hero].health -= public.warriors[enemy].defense;
             // if hero's health is less than 1 and player has not won yet, player loses game!
             if (public.warriors[hero].health < 1) {
-                console.log(`the enemy was ${public.gameState.enemy}`);
                 loseGame();
                 return;
             }
@@ -381,7 +380,6 @@ var fightingRPG = (function() {
     function loseGame() {
         // if battle button still exists, remove it
         $(".vsContainerSmall").remove();
-        console.log("you are losing");
         // display lose to screen
         $(".contentContainer").prepend(`<div class="loseContainer"></div>`);
         $(".loseContainer").append(`<div class="lose"></div>`);
