@@ -1,3 +1,6 @@
+/* import fonts: shojumaru for headings and ubuntu for main text */
+@import url('https://fonts.googleapis.com/css?family=Shojumaru|Ubuntu');
+
 /* box sizing fix */
 * {
 	box-sizing: border-box;
@@ -5,7 +8,7 @@
 
 /* Header fonts */
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Georgia', 'serif';
+	font-family: 'Shojumaru', cursive;
 	font-weight: 800;
 }
 
@@ -17,6 +20,8 @@ h2 {
 }
 h3 {
 	font-size: 30px;
+	/* main text fonts */
+	font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -27,7 +32,7 @@ body {
 	background-size: auto 100%;
 	background-position: center bottom;
 	/* main text fonts */
-	font-family: 'Arial', 'sans-serif';
+	font-family: 'Ubuntu', sans-serif;
 }
 
 .contentContainer {
@@ -35,7 +40,7 @@ body {
 	position: relative;
 	background: url("../images/onePiece/pageBackground.jpg");
 	min-height: 100vh;
-	max-width: 700px;
+	max-width: 800px;
 	min-width: 90%;
 	background-size: auto 100%;
 	background-repeat: no-repeat;
@@ -114,27 +119,27 @@ h3 {
 }
 
 .startPos.warriorPos1 {
-	/* position luffy starting place */
 	top: 1%;
-	left: 15%;
+	left: 6%;
+    z-index: 1;
 }
 
 .startPos.warriorPos2 {
-	/* position sanji starting place */
-	top: 60%;
-	left: 70%;
+	top: 57%;
+    left: 77%;
+    z-index: 4;
 }
 
 .startPos.warriorPos3 {
-	/* position robin starting place */
-	top: 50%;
-	left: 11%;
+    top: 47%;
+    left: 0%;
+    z-index: 3;
 }
 
 .startPos.warriorPos4 {
-	/* position zoro starting place */
 	top: 0%;
-	left: 67%;
+	left: 69%;
+    z-index: 2;
 }
 
 img.warrior {
@@ -169,7 +174,6 @@ canvas.warrior {
 	margin-top: 20px;
 }
 
-
 .monster .title {
 	width: 120px;
 	padding: .1em .2em;
@@ -182,6 +186,11 @@ canvas.warrior {
 
 .monster.warriorContainer {
     margin: -25px 0;
+}
+
+img.attack {
+	position: relative;
+	left: -25%;
 }
 
 .defeated {
@@ -279,9 +288,9 @@ canvas.warrior {
 /* GAME INFO STYLING - gets the job done, I guess */
 .gameInfo {
 	position: relative;
-	width: 15em;
+	width: 18em;
 	margin: 0 auto;
-	background: #222;
+	background: #111;
 	border: #999 solid 2px;
 	color: #fff;
 	opacity: .8;
@@ -290,32 +299,56 @@ canvas.warrior {
 	top: 1em;
 }
 .gameInfo h1{
-	font-size: 24px;
+	font-size: 28px;
 }
 .gameInfo p {
+	font-size: 18px;
 	padding: .5em 0;
+	line-height: 1.2em;
+}
+.gameInfo .divider {
+	height: 1px;
+	border-top: thin solid #aaa;
+	padding: 0;
+    margin: 0;
 }
 
-/* WIN SCREEN STYLING */
-.win, .lose {
+/* END GAME SCREEN STYLING */
+.winContainer, .loseContainer {
+	position: relative;
 	text-align: center;
 	width: 80%;
 	font-size: 36px;
 	height: 400px;
 	margin: 0 auto;
-	margin-top: 20px;
+	top: 50px;
+	overflow: hidden;
+}
+.win, .lose {
+	position: absolute;
+	height: 400px;
+	width: 100%;
+	background: url("../images/onePiece/asfalt-light.png");
 }
 .win h1, .lose h1 {
+	position: relative;
 	margin: 0 auto;
-	margin-top: 200px;
+	margin-top: 150px;
 	font-size: 40px;
 }
-.win {
-	background: #0d4;
-	border: solid #0a2 3px;
+.win h1, .lose h1 {
+	position: relative;
+	top: 0;
 }
-.lose {
-	background: #d22;
-	border: solid #a11 3px;
+
+/* WIN SCREEN STYLING */
+.winContainer {
+	background: #094;
+    border: solid #054 4px;
 }
+
 /* LOSE SCREEN STYLING */
+.loseContainer {
+	background: #d22;
+	border: solid #611 4px;
+}
